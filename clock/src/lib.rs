@@ -5,14 +5,14 @@ const DAY: i32 = 1440;
 const HOUR: i32 = 60;
 
 pub struct Clock {
-    minutes: u32,
+    minutes: i32,
 }
 
 impl Clock {
     pub fn new(hours: i32, minutes: i32) -> Self {
 
         Self { // the last + DAY) % DAY solves negative cases
-            minutes: ((( (hours * HOUR) + minutes) % DAY) + DAY) % DAY
+            minutes: ((( (hours * HOUR) + minutes) % DAY) + DAY) % DAY,
         }
     }
 
